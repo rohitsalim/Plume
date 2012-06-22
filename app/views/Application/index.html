@@ -1,4 +1,19 @@
 #{extends 'main.html' /}
-#{set title:'Home' /}
+#{set title:'Rohtih' /}
+#{fbg.scriptAsync /}
 
-#{welcome /}
+<fb:login-button size="xlarge" onlogin="facebookLogin();" scope="user_about_me, friends_location, friends_hometown, friends_about_me">Login With Facebook</fb:login-button>
+
+<script type="text/javascript">
+    function facebookLogin() {
+        // get current login status from facebook.com
+        FB.getLoginStatus(function(response) {
+            if (response.status === 'connected') {
+                // the user is logged in and connected to your app
+                window.location = "@{Application.facebookLogin()}";
+            } else {
+                window.location = "@{Application.facebookLogout()}";
+            }
+         });
+    }
+</script>

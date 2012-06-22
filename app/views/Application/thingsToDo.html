@@ -1,0 +1,15 @@
+#{extends 'main.html' /}
+#{set title:'Things To Do' /}
+
+So you are going to ${city}
+<br/>
+<br/>
+#{if arr.size()==0}
+	Hmm... We can't see to find any of your friends who currently live in ${city}
+#{/if}
+#{else}
+	Here are a list of your friends who live in ${city}:
+	#{list items:arr, as:'friend'}
+		#{friendsBox friend1:friend, as:'expanded' /}
+	#{/list}
+#{/else}

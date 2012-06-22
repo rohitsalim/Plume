@@ -1,0 +1,8 @@
+#{extends 'main.html' /}
+#{set title:'Page2' /}
+
+Hello ${name}, where are you off to?
+#{form @Application.thingsToDo()}
+	<input type="text" name="city" id="city"/>
+	<input type="submit" value="Explore"/>
+#{/form}

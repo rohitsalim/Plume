@@ -2,3 +2,9 @@
 
 require:
     - play
+
+require:    
+    - play -> fbgraph 0.4:
+    	transitive: false
+    	
+        
